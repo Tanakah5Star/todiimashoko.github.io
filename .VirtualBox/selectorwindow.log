@@ -1,0 +1,16 @@
+00:00:02.220042 VirtualBox GUI VM Selector Window 6.1.18 r142142 win.amd64 (Jan  7 2021 15:32:19) release log
+00:00:02.220044 Log opened 2021-02-03T21:07:54.654782300Z
+00:00:02.220045 Build Type: release
+00:00:02.220047 OS Product: Windows 10
+00:00:02.220048 OS Release: 10.0.18363
+00:00:02.220049 OS Service Pack: 
+00:00:02.233153 DMI Product Name: 2429C28
+00:00:02.236917 DMI Product Version: ThinkPad T530
+00:00:02.236932 Firmware type: BIOS
+00:00:02.236938 Host RAM: 3819MB (3.7GB) total, 589MB available
+00:00:02.236943 Executable: C:\Program Files\Oracle\VirtualBox\VirtualBox.exe
+00:00:02.236944 Process ID: 6464
+00:00:02.236945 Package type: WINDOWS_64BITS_GENERIC
+00:00:02.237110 Qt version: 5.6.2
+00:00:02.259308 GUI: UIMediumEnumerator: Medium-enumeration started...
+00:00:03.059120 GUI: UIMediumEnumerator: Medium-enumeration finished!

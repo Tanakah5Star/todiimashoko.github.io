@@ -1,0 +1,108 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Quokka",
+    "patterns": [
+        {"include": "#strings"},
+        {"include": "#rawstrings"},
+        {"include": "#linecomments"},
+        {"include": "#greyopers"},
+        {"include": "#booleans"},
+        {"include": "#integers"},
+        {"include": "#floats"},
+        {"include": "#functions"},
+        {"include": "#functiondefs"},
+        {"include": "#imports"},
+        {"include": "#types"},
+        {"include": "#keywords"}
+    ],
+    "repository": {
+        "strings": {
+            "name": "string.quoted.double.q",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [{
+                "name": "constant.character.escape.q",
+                "match": "\\\\."
+            }]
+        },
+        "rawstrings": {
+            "name": "string.quoted.double.q",
+            "begin": "'",
+            "end": "'",
+            "patterns": [{
+                "name": "constant.character.escape.q",
+                "match": "\\\\."
+            }]
+        },
+        "linecomments": {
+            "patterns": [{
+                "name": "comment.q",
+                "match": "\\/\\/.*"
+            }]
+        },
+        "greyopers": {
+            "patterns": [{
+                "name": "keyword.q",
+                "match": "(\\+|\\-|\\*|/|\\?|~|:|<|>|\\^|%|&|=|\\|)"
+            }]
+        },
+        "booleans": {
+            "patterns": [{
+                "name": "constant.language.q",
+                "match": "\\b(true|false|null)\\b"
+            }]
+        },
+        "integers": {
+            "patterns": [{
+                "name": "constant.numeric.q",
+                "match": "\\b(-|\\+)*[0-9]+\\b"
+            }]
+        },
+        "floats": {
+            "patterns": [{
+                "name": "constant.numeric.q",
+                "match": "\\b(\\-|\\+)*[0-9]*\\.[0-9]+f\\b"
+            }]
+        },
+        "functions": {
+            "name": "function.q",
+            "begin": "\\b([\\w\\.]+) *(=|\\+=|\\-=|\\*=|/=|\\*\\*=|%=|\\&=)",
+            "end": "( |\\b)",
+            "beginCaptures": {
+                "1": {"name": "constant.numeric.q"},
+                "2": {"name": "keyword.q"}
+            }
+        },
+        "functiondefs": {
+            "name": "function.q",
+            "begin": "\\b(fun) +([\\w\\.]+)",
+            "end": "\\b",
+            "beginCaptures": {
+                "1": {"name": "keyword.control.q"},
+                "2": {"name": "entity.name.function.q"}
+            }
+        },
+        "imports": {
+            "name": "import.q",
+            "begin": "(import) +(['\"]*)([\\w\\.]+)(['\"]*)\\b",
+            "end": "(.|\\b)",
+            "beginCaptures": {
+                "1": {"name": "keyword.control.q"},
+                "3": {"name": "constant.numeric.q"}
+            }
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.q",
+                    "match": "\\b(if|elif|else|until|while|for|ret|rep|cut|del|end|fun|class|lam|import|global|not|and|or|xor|nor|in)\\b"
+                },
+                {
+                    "name": "keyword.control.q",
+                    "match": "\\b(print|println|input|type|disp|exec|exit|sizeof|string|int|bool|open)\\b"
+                }
+            ]
+        }
+    },
+    "scopeName": "source.q"
+}
