@@ -28,7 +28,7 @@
 
 				<div class="intro-wrapper">
 					<div class="nav-wrapper">
-						<a href="index.html">
+						<a href="index.html" aria-label="Refreshes welcome page">
 							<div class="dots-wrapper">
 								<div id="dot-1" class="browser-dot"></div>
 								<div id="dot-2" class="browser-dot"></div>
@@ -123,24 +123,26 @@
 						</div>
 					</div>
 
-					<div class="social-links">
+					<div id="social-links">
 						<iframe
 							width="560"
 							height="315"
 							src="images/logo.mp4"
-							allowfullscreen
+							//allow="autoplay"
+							//allowfullscreen
+							title="Logo Video"
 						></iframe>
 
-						<h3>Find me on LinkedIn and Github</h3>
+						<h3 style="text-align: center">Find me on LinkedIn and Github</h3>
 
 						<a
 							target="_blank"
 							href="https://www.linkedin.com/in/tanakah-todii-mashoko"
-							>LinkedIn: Tanakah Todii Mashoko</a
+							><span style =text-align:center><b>LinkedIn:</b> <u>Tanakah Todii Mashoko</u></span> </a
 						>
 						<br />
 						<a target="_blank" href="https://github.com/Tanakah5Star"
-							>Github: Tanakah5Star</a
+							><span style =text-align:center><b>Github:</b> <u>Tanakah5Star</u></span></a
 						>
 					</div>
 				</div>
@@ -210,23 +212,45 @@
 			<div class="main-container">
 				<h3 style="text-align: center">Get In Touch</h3>
 
-				<form id="contact-form">
-					<label>Name</label>
-					<input class="input-field" type="text" name="name" />
+				<form id="contact-form" onsubmit="return false">
+					<label for="name">Name</label>
+					<input
+						class="input-field"
+						type="text"
+						name="name"
+						placeholder="Your name.."
+						required
+					/>
 
-					<label>Subject</label>
-					<input class="input-field" type="text" name="subject" />
+					<label for="subject">Subject</label>
+					<input
+						class="input-field"
+						type="text"
+						name="subject"
+						placeholder="Enter subject"
+					/>
 
 					<label>Email</label>
-					<input class="input-field" type="text" name="email" />
+					<input
+						class="input-field"
+						type="email"
+						name="email"
+						placeholder="e.g johndoe@something.com"
+						required
+					/>
 
 					<label>Message</label>
-					<textarea class="input-field" name="message"></textarea>
+					<textarea
+						class="input-field"
+						name="message"
+						placeholder="Write something.."
+					></textarea>
 
-					<input id="submit-btn" type="submit" value="Send" />
+					<input id="submit-btn" type="submit" value="Send" onclick="setTimeout(function () { window.location.reload(); }, 2000)" />
 				</form>
 			</div>
 		</section>
 		<script src="script.js"></script>
+		<script src="https://smtpjs.com/v3/smtp.js"></script>
 	</body>
 </html>

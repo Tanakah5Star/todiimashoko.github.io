@@ -35,3 +35,17 @@ function setTheme(mode) {
 
 	localStorage.setItem("theme", mode);
 }
+
+const btn = document.querySelector('input[type="submit"]');
+const inputs = document.querySelector("form");
+btn.addEventListener("click", () => {
+	Email.send({
+		SecureToken: "35f09a9d-fc22-4c5c-bc42-221ad7aded4d",
+		To: "mashokotanakah@gmail.com",
+		From: inputs.elements["email"].value.trim(),
+		Subject: inputs.elements["subject"].value.trim(),
+		Body: `${inputs.elements["message"].value.trim()}<br>${inputs.elements[
+			"name"
+		].value.trim()}`,
+	}).then((msg) => alert("Thank You. I will be in touch soon."));
+});
