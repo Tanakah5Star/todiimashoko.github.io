@@ -47,5 +47,17 @@ btn.addEventListener("click", () => {
 		Body: `${inputs.elements["message"].value.trim()}<br>${inputs.elements[
 			"name"
 		].value.trim()}`,
-	}).then((msg) => alert("Thank You. I will be in touch soon."));
+	}).then(() => {
+		if (
+			document.getElementById("email").value.length == 0 ||
+			document.getElementById("name").value.length == 0
+		) {
+			//alert("Please fill in all required Fields!");
+		} else {
+			alert("Thank You. I will be in touch soon.");
+			setTimeout(function () {
+				window.location.reload();
+			}, 50);
+		}
+	});
 });
