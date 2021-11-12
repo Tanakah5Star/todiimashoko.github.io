@@ -48,11 +48,11 @@ btn.addEventListener("click", () => {
 			"name"
 		].value.trim()}`,
 	}).then(() => {
+		let filter = /^[\w._-]+[+]?[\w._-]+@[\w.-]+\.[a-zA-Z]{2,6}$/;
 		if (
-			document.getElementById("email").value.length == 0 ||
-			document.getElementById("name").value.length == 0
+			document.getElementById("name").value.length == 0 ||
+			!filter.test(email.value)
 		) {
-			//alert("Please fill in all required Fields!");
 		} else {
 			alert("Thank You. I will be in touch soon.");
 			setTimeout(function () {
